@@ -6,7 +6,7 @@ public class RunMain {
     public static int n;
     public static Scanner sc = new Scanner(System.in);
     public static int[] a = new int[1000];
-    
+
     // Nhập mảng với n số nguyên
     public static void nhap_Mang(){
         System.out.print("Nhap n: ");
@@ -16,28 +16,28 @@ public class RunMain {
             a[i] = sc.nextInt();
         }
     }
-    
-    // Hiển thị mảng vừa tạo 
+
+    // Hiển thị mảng vừa tạo
     public static void xuat_Mang() {
         for (int i = 0; i < n; i++) {
             System.out.print(a[i]+ " ");
         }
         System.out.println();
     }
-    
+
     // Thêm 1 phần tử vào vị trí k bất kỳ
     public static void them() {
         System.out.print("Nhập phần tử cần thêm: ");
         int gt = sc.nextInt();
         System.out.print("Nhập vị trí cần thêm: ");
         int k = sc.nextInt();
-        
+
         if(k>=0 && k<=n){
             for(int i = n; i > k; i--){
                 a[i] = a[i-1];
             }
             a[k] = gt;
-            n++; 
+            n++;
             System.out.print("Mảng sau khi thêm: ");
             xuat_Mang();
         }
@@ -45,12 +45,12 @@ public class RunMain {
             System.out.println("Vị trí không hợp lệ");
         }
     }
-    
+
     // Xóa 1 phần tử tại vị trí k bất kỳ
     public static void xoa() {
         System.out.print("Nhập vị trí cần xóa: ");
         int k = sc.nextInt();
-        
+
         if(k>=0 && k<=n) {
             for(int i = k; i < n; i++) {
                 a[i] = a[i+1];
@@ -63,7 +63,7 @@ public class RunMain {
             System.out.println("Vị trí không hợp lệ");
         }
     }
-    
+
     // Đảo ngược mảng
     public static void dao() {
         for(int i = 0; i < n/2; i++){
@@ -72,7 +72,7 @@ public class RunMain {
             a[n-i-1] = temp;
         }
     }
-    
+
     // Hiển thị phần tử a[1] và các số chia hết cho a[1]
     public static void chia_het() {
         System.out.println("a[1] = " + a[1]);
@@ -84,30 +84,28 @@ public class RunMain {
         }
         System.out.println();
     }
-    
+
     // Kiểm tra số nguyên tố
     public static boolean ngTo(int a){
-        if(a < 2) 
-            return false;
         for(int i=2; i*i<=a; i++){
             if (a % i == 0) {
                 return false;
             }
         }
-        return true;
+        return n>1;
     }
-    
+
     // Tổng các số nguyên tố trong mảng
     public static int tong() {
         int tong=0;
         for(int i = 0; i < n; i++) {
-            if(ngTo(a[i]) == true) {
+            if(ngTo(a[i])) {
                 tong += a[i];
             }
         }
         return tong;
     }
-    
+
     public static void main(String[] args) {
         int chon;
         do {
@@ -120,12 +118,12 @@ public class RunMain {
             System.out.println("6. Hiển thị phần tử a[1] và các số chia hết cho a[1].");
             System.out.println("7. Tổng các số nguyên tố có trong mảng.");
             System.out.println("8. Thoát.");
-            
+
             System.out.print("Mời bạn chọn: ");
             chon = sc.nextInt();
-            
+
             switch(chon){
-                case 1: 
+                case 1:
                     System.out.println("Nhập mảng.");
                     nhap_Mang();
                     break;
@@ -133,15 +131,15 @@ public class RunMain {
                     System.out.print("Mảng vừa tạo: ");
                     xuat_Mang();
                     break;
-                case 3:    
+                case 3:
                     System.out.println("Thêm phần tử.");
                     them();
-                    
+
                     break;
                 case 4:
                     System.out.println("Xóa phần tử.");
                     xoa();
-                    
+
                     break;
                 case 5:
                     System.out.println("Đảo ngược mảng.");
@@ -152,7 +150,7 @@ public class RunMain {
                 case 6:
                     chia_het();
                     break;
-                case 7:   
+                case 7:
                     System.out.print("Tổng các số nguyên tố là: " + tong() + "\n");
                     break;
                 case 8:
