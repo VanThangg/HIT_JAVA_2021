@@ -23,7 +23,7 @@ public class PHIEU {
     }
     public void XUAT() {
         System.out.println("Ma phieu: " + maPhieu);
-        float tong = 0;
+        double tong = 0;
         for(int i = 0; i < n; i++) {
             System.out.println("Thong tin mat hang " + (i+1));
             x[i].XUAT();

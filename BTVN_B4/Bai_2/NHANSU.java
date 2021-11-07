@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class NHANSU {
     private String maNS;
     private String hoTen;
-    DATE NS;
+    DATE ns;
 
     public void NHAP() {
         Scanner sc = new Scanner(System.in);
@@ -13,13 +13,13 @@ public class NHANSU {
         maNS = sc.nextLine();
         System.out.print("Ho ten: ");
         hoTen = sc.nextLine();
-        NS = new DATE();
-        NS.NHAP();
+        ns = new DATE();
+        ns.NHAP();
     }
 
     public void XUAT() {
         System.out.println("Ma nhan su: " + maNS);
         System.out.println("Ho ten: " + hoTen);
-        NS.XUAT();
+        ns.XUAT();
     }
 }
