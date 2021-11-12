@@ -9,8 +9,8 @@ public class LOPHOC {
     private String tenLH;
     private String ngayMo;
     private int n;
-    private String giaoVien;
     ArrayList<SINHVIEN> x = new ArrayList<>(n);
+    private String giaoVien;
 
     public LOPHOC() {
     }
@@ -32,8 +32,6 @@ public class LOPHOC {
         tenLH = sc.nextLine();
         System.out.print("Ngay mo: ");
         ngayMo = sc.nextLine();
-        System.out.print("Giao vien: ");
-        giaoVien = sc.nextLine();
 
         System.out.print("So sinh vien: ");
         n = sc.nextInt();
@@ -43,7 +41,9 @@ public class LOPHOC {
             sv.Nhap();
             x.add(sv);
         }
-
+        sc.nextLine();
+        System.out.print("Giao vien: ");
+        giaoVien = sc.nextLine();
     }
 
     public void Xuat() {

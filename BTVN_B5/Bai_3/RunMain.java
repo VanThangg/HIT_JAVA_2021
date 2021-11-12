@@ -8,6 +8,7 @@ public class RunMain {
 
         System.out.println("So sinh vien khoa 15: " + a.SV_K15());
 
+
         a.sx();
         System.out.println("Lop hoc sau khi sap xep.");
         a.Xuat();
