@@ -17,6 +17,7 @@ public class SINHVIEN extends NGUOI {
         this.khoaHoc = khoaHoc;
     }
 
+    // Viết hàm Nhap(), Xuat() ở class RunMain sẽ đúng yêu cầu đề bài
     public void Nhap() {
         Scanner sc = new Scanner(System.in);
         super.Nhap();

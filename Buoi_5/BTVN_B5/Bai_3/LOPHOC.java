@@ -9,7 +9,7 @@ public class LOPHOC {
     private String tenLH;
     private String ngayMo;
     private int n;
-    ArrayList<SINHVIEN> x = new ArrayList<>(n);
+    ArrayList<SINHVIEN> x = new ArrayList<>();
     private String giaoVien;
 
     public LOPHOC() {
@@ -24,6 +24,7 @@ public class LOPHOC {
         this.giaoVien = giaoVien;
     }
 
+    // Viết hàm Nhap(), Xuat() ở class RunMain sẽ đúng yêu cầu đề bài
     public void Nhap() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Ma lop hoc: ");
@@ -80,6 +81,12 @@ public class LOPHOC {
                 }
             }
         }
+//        Collections.sort(x.getList(), new Comparable<SINHVIEN>() {
+//            @Override
+//            public int compare(SINHVIEN o1, SINHVIEN o2) {
+//                return o1.getKhoaHoc()-o2.getKhoaHoc();
+//            }
+//        });
     }
 
     public String getMaLH() {
