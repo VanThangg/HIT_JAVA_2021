@@ -4,14 +4,14 @@ public class Book extends Document {
     private int numberOfPage;
     private String author;
 
-    public void Nhap() {
-        super.Nhap();
-        System.out.print("Number of page: ");
-        numberOfPage = sc.nextInt();
-        sc.nextLine();
-        System.out.print("Author: ");
-        author = sc.nextLine();
-    }
+//    public void Nhap() {
+//        super.Nhap();
+//        System.out.print("Number of page: ");
+//        numberOfPage = sc.nextInt();
+//        sc.nextLine();
+//        System.out.print("Author: ");
+//        author = sc.nextLine();
+//    }
     public void Xuat() {
         super.Xuat();
         System.out.printf("%20s %20s", numberOfPage, author);

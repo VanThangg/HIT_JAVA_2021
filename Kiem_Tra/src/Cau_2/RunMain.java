@@ -9,25 +9,104 @@ public class RunMain {
 
     public static void addBook() {
         Book book = new Book();
-        book.Nhap();
+        int dem = 0;
+        while(dem==0) {
+            dem = 1;
+            System.out.print("Id: ");
+            book.setId(sc.nextInt());
+            sc.nextLine();
+            for(int i = 0; i < books.size(); i++) {
+                if(book.getId() == books.get(i).getId()){
+                    dem=0;
+                }
+            }
+            if(dem==0) {
+                System.out.println("Id already exists, please re-enter!");
+            }
+        }
+        System.out.print("Name: ");
+        book.setName(sc.nextLine());
+        System.out.print("Publisher: ");
+        book.setPublisher(sc.nextLine());
+        System.out.print("Price: ");
+        book.setPrice(sc.nextDouble());
+        System.out.print("Number of page: ");
+        book.setNumberOfPage(sc.nextInt());
+        sc.nextLine();
+        System.out.print("Author: ");
+        book.setAuthor(sc.nextLine());
         books.add(book);
+        System.out.println("==> Added.");
     }
     public static void editBook() {
-        int x, dem = 0;
+        int x, d = 0;
         System.out.print("Id cua book can chinh sua: ");
         x = sc.nextInt();
         for(int i = 0; i < books.size(); i++) {
             if(x == books.get(i).getId()) {
-                Book bEdit = new Book();
-                bEdit.Nhap();
-                books.remove(i);
-                books.add(i, bEdit);
-                dem++;
+                d++;
             }
         }
-        if (dem == 0) {
-            System.out.println("==> Not found, please re-enter id.");
-            editBook();
+        if (d == 0) {
+            System.out.println("==> Id does not exist!");
+        }
+        else {
+            for(int i = 0; i < books.size(); i++) {
+                if(x == books.get(i).getId()) {
+                    System.out.println("1. Id \n" + "2. name \n" + "3. publisher \n" + "4. price \n" + "5. numberOfPages\n" + "6. author");
+                    System.out.print("Enter your choose: ");
+                    int edit = sc.nextInt();
+                    switch (edit) {
+                        case 1:
+                            System.out.print("Enter id: ");
+                            books.get(i).setId(sc.nextInt());
+//                            int dem = 0;
+//                            while(dem==0) {
+//                                dem = 1;
+//                                System.out.print("Enter id: ");
+//                                books.get(i).setId(sc.nextInt());
+//                                sc.nextLine();
+//                                for(int j = 0; i < books.size(); j++) {
+//                                    if(i != j) {
+//                                        if(books.get(i).getId() == books.get(j).getId()){
+//                                            dem=0;
+//                                        }
+//                                    }
+//                                }
+//                                if(dem==0) {
+//                                    System.out.println("Id already exists, please re-enter");
+//                                }
+//                            }
+                            break;
+                        case 2:
+                            System.out.print("Enter name: ");
+                            sc.nextLine();
+                            books.get(i).setName(sc.nextLine());
+                            break;
+                        case 3:
+                            System.out.print("Enter publisher: ");
+                            sc.nextLine();
+                            books.get(i).setPublisher(sc.nextLine());
+                            break;
+                        case 4:
+                            System.out.print("Enter price: ");
+                            sc.nextLine();
+                            books.get(i).setPrice(sc.nextFloat());
+                            break;
+                        case 5:
+                            System.out.print("Enter number of page: ");
+                            sc.nextLine();
+                            books.get(i).setNumberOfPage(sc.nextInt());
+                            break;
+                        case 6:
+                            System.out.print("Enter author: ");
+                            sc.nextLine();
+                            books.get(i).setAuthor(sc.nextLine());
+                            break;
+                    }
+                }
+            }
+            System.out.println("==> Edited");
         }
     }
     public static void deleteBook() {
@@ -41,8 +120,10 @@ public class RunMain {
             }
         }
         if (dem == 0) {
-            System.out.println("==> Not found, please re-enter id.");
-            deleteBook();
+            System.out.println("==> Id does not exist!");
+        }
+        else {
+            System.out.println("==> Deleted");
         }
     }
     public static void sortName() {
@@ -55,6 +136,7 @@ public class RunMain {
                 }
             }
         }
+        System.out.println("==> Sorted");
     }
     public static void sortPrice() {
         for(int i = 0; i < books.size()-1; i++) {
@@ -66,6 +148,7 @@ public class RunMain {
                 }
             }
         }
+        System.out.println("==> Sorted");
     }
     public static void show() {
         System.out.printf("%10s %20s %20s %10s %20s %20s", "Id", "Name", "Publisher", "Price", "Nummber Of Page", "Author");
@@ -94,38 +177,33 @@ public class RunMain {
                 case 1:
                     System.out.println("You choose add book.");
                     addBook();
-                    System.out.println("==> Added.");
                     break;
                 case 2:
                     System.out.println("You choose edit book by id.");
                     editBook();
-                    System.out.println("==> Edited");
                     break;
                 case 3:
                     System.out.println("You choose delete book by id.");
                     deleteBook();
-                    System.out.println("==> Deleted");
                     break;
                 case 4:
                     System.out.println("You choose sort books by name.");
                     sortName();
-                    System.out.println("==> Sorted");
                     break;
                 case 5:
                     System.out.println("You choose sort books by price.");
                     sortPrice();
-                    System.out.println("==> Sorted");
                     break;
                 case 6:
                     System.out.println("You choose show all books.");
                     show();
                     break;
                 case 7:
-                    System.out.println("Thoát chương trình.");
+                    System.out.println("Exit the program");
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Mời bạn nhập lại!");
+                    System.out.println("Please re-enter!");
             }
 
         }while (chon != 7);

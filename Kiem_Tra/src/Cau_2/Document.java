@@ -10,17 +10,17 @@ public class Document {
 
     Scanner sc = new Scanner(System.in);
 
-    public void Nhap() {
-        System.out.print("Id: ");
-        id = sc.nextInt();
-        sc.nextLine();
-        System.out.print("Name: ");
-        name = sc.nextLine();
-        System.out.print("Publisher: ");
-        publisher = sc.nextLine();
-        System.out.print("Price: ");
-        price = sc.nextDouble();
-    }
+//    public void Nhap() {
+//        System.out.print("Id: ");
+//        id = sc.nextInt();
+//        sc.nextLine();
+//        System.out.print("Name: ");
+//        name = sc.nextLine();
+//        System.out.print("Publisher: ");
+//        publisher = sc.nextLine();
+//        System.out.print("Price: ");
+//        price = sc.nextDouble();
+//    }
     public void Xuat() {
         System.out.printf("%10s %20s %20s %10s", id, name, publisher, price);
     }
