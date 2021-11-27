@@ -58,25 +58,25 @@ public class RunMain {
                     int edit = sc.nextInt();
                     switch (edit) {
                         case 1:
-                            System.out.print("Enter id: ");
-                            books.get(i).setId(sc.nextInt());
-//                            int dem = 0;
-//                            while(dem==0) {
-//                                dem = 1;
-//                                System.out.print("Enter id: ");
-//                                books.get(i).setId(sc.nextInt());
-//                                sc.nextLine();
-//                                for(int j = 0; i < books.size(); j++) {
-//                                    if(i != j) {
-//                                        if(books.get(i).getId() == books.get(j).getId()){
-//                                            dem=0;
-//                                        }
-//                                    }
-//                                }
-//                                if(dem==0) {
-//                                    System.out.println("Id already exists, please re-enter");
-//                                }
-//                            }
+                            int dem = 0;
+                            while(dem==0) {
+                                dem = 1;
+                                System.out.print("Enter id: ");
+                                int id = sc.nextInt();
+                                sc.nextLine();
+                                for(int j = 0; j < books.size(); j++) {
+                                    if(id == books.get(j).getId()){
+                                        dem=0;
+                                        break;
+                                    }
+                                }
+                                if(dem==0) {
+                                    System.out.println("Id already exists, please re-enter");
+                                }
+                                else {
+                                    books.get(i).setId(id);
+                                }
+                            }
                             break;
                         case 2:
                             System.out.print("Enter name: ");
