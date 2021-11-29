@@ -13,15 +13,18 @@ public class RunMain {
         while(dem==0) {
             dem = 1;
             System.out.print("Id: ");
-            book.setId(sc.nextInt());
+            int x = sc.nextInt();
             sc.nextLine();
             for(int i = 0; i < books.size(); i++) {
-                if(book.getId() == books.get(i).getId()){
+                if(x == books.get(i).getId()){
                     dem=0;
                 }
             }
             if(dem==0) {
                 System.out.println("Id already exists, please re-enter!");
+            }
+            else {
+                book.setId(x);
             }
         }
         System.out.print("Name: ");
@@ -110,16 +113,17 @@ public class RunMain {
         }
     }
     public static void deleteBook() {
-        int x, dem = 0;
+        int x;
+        boolean ok = false;
         System.out.print("Id cua book can xoa: ");
         x = sc.nextInt();
         for(int i = 0; i < books.size(); i++) {
             if(x == books.get(i).getId()) {
                 books.remove(i);
-                dem++;
+                ok = true;
             }
         }
-        if (dem == 0) {
+        if (!ok) {
             System.out.println("==> Id does not exist!");
         }
         else {
@@ -208,6 +212,4 @@ public class RunMain {
 
         }while (chon != 7);
     }
-
-
 }

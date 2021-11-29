@@ -11,7 +11,8 @@ public class RunMain {
         for(int i = 0; i < str.length(); i++) {
             if(str.charAt(i) >= '0' && str.charAt(i) <= '9') {
                 dem++;
-                tong+=Integer.parseInt(String.valueOf(str.charAt(i)));
+//                tong+=Integer.parseInt(String.valueOf(str.charAt(i)));
+                tong += Character.getNumericValue(str.charAt(i));
             }
         }
         int tich = 1;
