@@ -38,14 +38,22 @@ public class FileController {
 
     public void OpenFileToRead(String fileName){
         try {
-            scanner = new Scanner(Paths.get(fileName));
+            File file = new File(fileName);
+            if(!file.exists()){
+                file.createNewFile();
+            }
+            scanner = new Scanner(Paths.get(fileName),"UTF-8");
         }catch(IOException e){
             e.printStackTrace();
         }
     }
 
     public void CloseFileAfterRead(){
-        scanner.close();
+        try{
+            scanner.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     //Account
@@ -82,13 +90,8 @@ public class FileController {
         if(file.exists()){
             file.delete();
         }
-        OpenFileToWrite(fileName);
-        for(Account acc : list){
-            printWriter.println(
-                    acc.getId() + "|" + acc.getFullName() + "|" + acc.getUserName() + "|" +
-                            acc.getPassword() + "|" + acc.getEmail() + "|" + acc.getPhone() + "|" +
-                            acc.getCreatAt());
+        for (Account acc : list) {
+            WriteAccountToFile(fileName, acc);
         }
-        CloseFileAfterWrite();
     }
 }
