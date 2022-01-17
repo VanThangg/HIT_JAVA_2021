@@ -72,7 +72,7 @@ public class Person {
     }
 
     public void OutputPerson() {
-        System.out.printf("%25s %15s %25s %25s %25s", getFullName(), getDate(), getAddress(), getHometown(), getNation());
+        System.out.printf("%-25s %-15s %-25s %-25s %-25s", getFullName(), getDate(), getAddress(), getHometown(), getNation());
     }
     public void OutputPerson1() {
         System.out.println("\t\tFullname: " + getFullName());

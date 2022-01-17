@@ -403,7 +403,7 @@ public class RunMain {
         System.out.print("\n| ");
         System.out.print("\tAll employee.");
         System.out.printf("%165s", "|\n");
-        System.out.printf("| %10s %24s %15s %25s %25s %25s %24s %15s %6s |", "Id", "Full name", "Date", "Address", "Hometown", "Nation", "Department", "Salary Grape", "Hour");
+        System.out.printf("| %-9s %-25s %-15s %-25s %-25s %-24s %-25s %-15s %-6s |", "Id", "Full name", "Date", "Address", "Hometown", "Nation", "Department", "Salary Grape", "Hour");
         System.out.println();
         for (Employee emp : dataUsers) {
             emp.OutputEmployee();
@@ -434,7 +434,7 @@ public class RunMain {
         System.out.print("\n| ");
         System.out.print("\tEmployee.");
         System.out.printf("%169s", "|\n");
-        System.out.printf("| %10s %24s %15s %25s %25s %25s %24s %15s %6s |", "Id", "Full name", "Date", "Address", "Hometown", "Nation", "Department", "Salary Grape", "Hour");
+        System.out.printf("| %-9s %-25s %-15s %-25s %-25s %-24s %-25s %-15s %-6s |", "Id", "Full name", "Date", "Address", "Hometown", "Nation", "Department", "Salary Grape", "Hour");
         System.out.println();
         for(Account acc : accounts) {
             if(acc.getPosition().compareTo("Employee") == 0) {
@@ -876,7 +876,7 @@ public class RunMain {
                         System.out.print("\n| ");
                         System.out.print("\tSearch Results.");
                         System.out.printf("%163s", "|\n");
-                        System.out.printf("| %10s %24s %15s %25s %25s %25s %24s %15s %6s |", "Id", "Full name", "Date", "Address", "Hometown", "Nation", "Department", "Salary Grape", "Hour");
+                        System.out.printf("| %-9s %-25s %-15s %-25s %-25s %-24s %-25s %-15s %-6s |", "Id", "Full name", "Date", "Address", "Hometown", "Nation", "Department", "Salary Grape", "Hour");
                         System.out.println();
                         for (Employee emp : dataUsers) {
                             if(removeAccent(emp.getFullName().toLowerCase()).contains(removeAccent(name.toLowerCase())) && emp.getDepartment().compareTo(department) == 0) {
@@ -956,7 +956,7 @@ public class RunMain {
                         System.out.print("\n| ");
                         System.out.print("\tSearch Results.");
                         System.out.printf("%163s", "|\n");
-                        System.out.printf("| %10s %24s %15s %25s %25s %25s %24s %15s %6s |", "Id", "Full name", "Date", "Address", "Hometown", "Nation", "Department", "Salary Grape", "Hour");
+                        System.out.printf("| %-9s %-25s %-15s %-25s %-25s %-24s %-25s %-15s %-6s |", "Id", "Full name", "Date", "Address", "Hometown", "Nation", "Department", "Salary Grape", "Hour");
                         System.out.println();
                         for (Employee emp : dataUsers) {
                             if(removeAccent(emp.getFullName().toLowerCase()).contains(removeAccent(name.toLowerCase()))) {
@@ -989,8 +989,8 @@ public class RunMain {
                         }
                         System.out.print("\n| ");
                         System.out.print("\tSearch Results.");
-                        System.out.printf("%162s", "|\n");
-                        System.out.printf("| %10s %24s %15s %25s %25s %25s %24s %15s %6s |", "Id", "Full name", "Date", "Address", "Hometown", "Nation", "Department", "Salary Grape", "Hour");
+                        System.out.printf("%163s", "|\n");
+                        System.out.printf("| %-9s %-25s %-15s %-25s %-25s %-24s %-25s %-15s %-6s |", "Id", "Full name", "Date", "Address", "Hometown", "Nation", "Department", "Salary Grape", "Hour");
                         System.out.println();
                         for (Employee emp : dataUsers) {
                             if(removeAccent(emp.getDepartment().toLowerCase()).contains(removeAccent(department.toLowerCase()))) {
@@ -1161,7 +1161,7 @@ public class RunMain {
         System.out.print("\n| ");
         System.out.print("\tSort by name.");
         System.out.printf("%165s", "|\n");
-        System.out.printf("| %10s %24s %15s %25s %25s %25s %24s %15s %6s |", "Id", "Full name", "Date", "Address", "Hometown", "Nation", "Department", "Salary Grape", "Hour");
+        System.out.printf("| %-9s %-25s %-15s %-25s %-25s %-24s %-25s %-15s %-6s |", "Id", "Full name", "Date", "Address", "Hometown", "Nation", "Department", "Salary Grape", "Hour");
         System.out.println();
         for (Employee emp : dataSort) {
             emp.OutputEmployee();
@@ -1195,7 +1195,7 @@ public class RunMain {
         System.out.print("\n| ");
         System.out.print("\tSort by hard work.");
         System.out.printf("%160s", "|\n");
-        System.out.printf("| %10s %24s %15s %25s %25s %25s %24s %15s %6s |", "Id", "Full name", "Date", "Address", "Hometown", "Nation", "Department", "Salary Grape", "Hour");
+        System.out.printf("| %-9s %-25s %-15s %-25s %-25s %-24s %-25s %-15s %-6s |", "Id", "Full name", "Date", "Address", "Hometown", "Nation", "Department", "Salary Grape", "Hour");
         System.out.println();
         for (Employee emp : dataSort) {
             emp.OutputEmployee();
@@ -1250,13 +1250,13 @@ public class RunMain {
                     System.out.print("-");
                 }
                 System.out.println();
-                System.out.printf("| %10s %24s %15s %25s %25s %25s %24s %15s %6s %20s %24s |", "Id", "Full name", "Date", "Address", "Hometown", "Nation", "Department", "Salary Grape", "Hour", "Salary", "More");
+                System.out.printf("| %-9s %-25s %-15s %-25s %-25s %-24s %-25s %-15s %-5s %-20s %-25s |", "Id", "Full name", "Date", "Address", "Hometown", "Nation", "Department", "Salary Grape", "Hour", "Salary", "More");
                 System.out.println();
                 for (Employee emp : dataUsers) {
                     if(emp.getDepartment().compareTo(department) == 0) {
                         emp.OutputEmployeeSumary();
                         String salaryVND = currencyVN.format(emp.getSalary());
-                        System.out.printf("%20s %25s |", salaryVND, emp.getMore());
+                        System.out.printf("%-20s %-25s |", salaryVND, emp.getMore());
                         System.out.println();
                         emp.setHour(0);
                     }

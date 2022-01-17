@@ -163,14 +163,14 @@ public class Employee extends Person {
     }
 
     public void OutputEmployee() {
-        System.out.printf("| %10s", getId());
+        System.out.printf("| %-10s", getId());
         super.OutputPerson();
-        System.out.printf("%25s %15s %6s |", getDepartment(), getSalaryGrape(), getHour());
+        System.out.printf("%-25s %-15s %-6s |", getDepartment(), getSalaryGrape(), getHour());
     }
     public void OutputEmployeeSumary() {
-        System.out.printf("| %10s", getId());
+        System.out.printf("| %-10s", getId());
         super.OutputPerson();
-        System.out.printf("%25s %15s %6s", getDepartment(), getSalaryGrape(), getHour());
+        System.out.printf("%-25s %-15s %-6s", getDepartment(), getSalaryGrape(), getHour());
     }
     public void OutputEmployee1() {
         System.out.println("\t\tId: " + getId());
